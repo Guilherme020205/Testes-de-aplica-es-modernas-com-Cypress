@@ -1,8 +1,17 @@
 /// <reference types="cypress"/>
 // https://www.wcaquino.me/cypress/componentes.html
 describe('Trabalhe com elementos básicos', () => {
-    it('text', () => {
+    
+     before(() => { 
         cy.visit("https://www.wcaquino.me/cypress/componentes.html")
+        cy.wait(1000)
+     })
+    
+    beforeEach(() => { 
+        cy.reload()
+    })
+
+    it('text', () => {
 
         cy.get('body').should('contain', 'Cuidado')
 
@@ -15,8 +24,8 @@ describe('Trabalhe com elementos básicos', () => {
         
     })
 
-    it.only('Links', () => { 
-        cy.visit("https://www.wcaquino.me/cypress/componentes.html")
+    it('Links', () => { 
+       
         cy.contains('a', 'Voltar').click()
         cy.get('#resultado').should('contain', 'Voltou!')
        
@@ -25,8 +34,7 @@ describe('Trabalhe com elementos básicos', () => {
         cy.get('#resultado').should('have.not.text', 'Voltou!')
 
         cy.get('[href="#"]').click()
-        cy.get('#resultado').should('contain', 'Voltou!')
-
+        cy.get('#resultado').should('contain', 'Voltou!') 
 
     });
 }) 
