@@ -4,8 +4,7 @@
   "description": "Automatize testes funcionais (e2e), de API Rest (backend) e de interface gráfica (frontend)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "open": "cypress open"
+    "test": "cypress open"
   },
   "keywords": [],
   "author": "",

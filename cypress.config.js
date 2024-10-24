@@ -7,5 +7,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
+    experimentalRunAllSpecs: true,
+    // experimentalSessionAndOrigin: true,
   },
+  // fixturesFolder: false,
+  // video: false
 })
