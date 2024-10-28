@@ -17,7 +17,9 @@ describe("Teste de Login", () => {
         cy.get('#mat-input-1').click().type('30352311')
         cy.get('.mdc-button__label').click() //.wait(20000)
         cy.get('.mat-mdc-autocomplete-trigger').click().type('C23{ENTER}')
-        cy.get('#mat-input-6') //.click // Não estou conseguindo clicar no campo
+        cy.get('#mat-input-4').click({ force: true }).type('51')
+        
+        
     });
 
 })   
