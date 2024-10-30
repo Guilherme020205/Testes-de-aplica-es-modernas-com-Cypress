@@ -9,6 +9,7 @@ module.exports = defineConfig({
     },
     experimentalRunAllSpecs: true,
     // experimentalSessionAndOrigin: true,
+    // defaultCommandTimeout: 10000
   },
   // fixturesFolder: false,
   // video: false

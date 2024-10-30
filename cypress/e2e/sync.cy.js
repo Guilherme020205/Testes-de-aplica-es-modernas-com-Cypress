@@ -22,18 +22,41 @@ describe('Espera...', () => {
     it('Deve fazer retrys', () => {
         cy.get('#buttonDelay').click()
         cy.get('#novoCampo')
-            .should('not.exist') 
+            .should('not.exist')
             .should('exist')
 
     });
 
-    it.only('Uso do find', () => {
+    it('Uso do find', () => {
         cy.get('#buttonList').click()
         cy.get('#lista li')
             .find('span')
             .should('contain', 'Item 1')
-         cy.get('#lista li')
+        cy.get('#lista li')
             .find('span')
             .should('contain', 'Item 2')
     });
+
+    it('Uso do timeout 1', () => {
+        cy.get('#buttonDelay').click()
+        // cy.get('#novoCampo', {timeout: 5000}).should('exist')
+        cy.get('#novoCampo').should('exist')
+    });
+
+    it('Uso do timeout 2', () => {
+        cy.get('#buttonList').click()
+        cy.wait(5000)
+        cy.get('#lista li')
+            .find('span')
+            .should('contain', 'Item 2')
+    });
+
+    it.only('Uso do timeout 2', () => {
+        cy.get('#buttonListDOM').click()
+        cy.get('#lista li span')
+            .should('have.length', 1)
+        cy.get('#lista li span')
+            .should('have.length', 2)
+    });
+
 })
